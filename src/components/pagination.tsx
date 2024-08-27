@@ -71,7 +71,8 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
         disabled={currentPage === 1}
         className={`px-4 py-2 border bg-white text-black ${currentPage === 1? 'text-gray-400':''}`}
       >
-        Предыдущая
+        <span className='block sm:hidden'>&#9668;</span>
+        <span className='hidden sm:block'>Предыдущая</span>
       </button>
       {generatePages()}
       <button
@@ -79,7 +80,8 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
         disabled={currentPage === maxPage}
         className={`px-4 py-2 border bg-white text-black ${currentPage === maxPage? 'text-gray-400':''}`}
       >
-        Следующая
+        <span className='hidden sm:block'>Следующая</span>
+        <span className='block sm:hidden'>&#9658;</span>
       </button>
     </div>
   );

@@ -40,10 +40,12 @@ const CharacterList = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 ">
+      <div className="flex items-stert flex-col sm:flex-row gap-2">
         <SearchInput />
+        <div className="flex items-center gap-2">
         <StatusFilter selectedList={characterStasuses} paramsName="status" />
         <StatusFilter selectedList={characterGenders} paramsName="gender" />
+        </div>
       </div>
       {character?.data && !character.error ? (
         <>

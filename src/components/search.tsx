@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useAppDispatch } from "@/store/hooks";
 import { setSearch } from "@/store/paramsSlice";
 
-const SearchInput = () => {
+const SearchInput = ({className}:{className?:string}) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -40,7 +40,7 @@ const SearchInput = () => {
       </div>
       <input
         placeholder="Поиск"
-        className="pl-12 h-10 rounded-xl outline-none border"
+        className={`pl-12 h-10 rounded-xl outline-none border w-full ${className}`}
         onChange={(e) => handleSearch(e.target.value)}
         defaultValue={searchParams.get("search")?.toString()}
       />
