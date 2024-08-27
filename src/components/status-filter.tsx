@@ -41,7 +41,7 @@ const CustomFilter = ({
 
   return (
     <select
-      className="p-2 rounded-md cursor-pointer"
+      className="p-2 rounded-md cursor-pointer outline-none"
       name={paramsName}
       onChange={(e: any) => handleSelect(e.target.value)}
       defaultValue={searchParams.get(paramsName)?.toString()}

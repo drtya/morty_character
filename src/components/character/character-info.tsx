@@ -67,14 +67,14 @@ const CharacterInfo = () => {
               <div>Status: {character?.data?.status}</div>
               <Link
                 href={character?.data?.location.url}
-                className="text-gray-400"
+                className="block text-gray-400"
                 target="_blank"
               >
                 Last known location:{character?.data?.location.name}
               </Link>
               <Link
                 href={character?.data?.origin.url}
-                className="text-gray-400"
+                className="block text-gray-400"
                 target="_blank"
               >
                 Origin:{character?.data?.origin.name}
@@ -116,7 +116,7 @@ const CharacterInfo = () => {
               <div>
                 <Link
                   href={localeChar?.data?.location.url}
-                  className="text-gray-600"
+                  className="block text-gray-600"
                   target="_blank"
                 >
                   Last known location: {localeChar?.data?.location.name}
@@ -125,7 +125,7 @@ const CharacterInfo = () => {
               <div>
                 <Link
                   href={localeChar?.data?.origin.url}
-                  className="text-gray-600"
+                  className="block text-gray-600"
                   target="_blank"
                 >
                   Origin: {localeChar?.data?.origin.name}
