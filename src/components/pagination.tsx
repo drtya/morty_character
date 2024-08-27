@@ -20,7 +20,7 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
         <button
           key={1}
           onClick={() => onPageChange(1)}
-          className="px-4 py-2 border bg-white text-black"
+          className="px-4 py-2 max-sm:px-2 max-sm:py-1 border bg-white text-black"
         >
           1
         </button>
@@ -37,7 +37,7 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
         <button
           key={i}
           onClick={() => onPageChange(i)}
-          className={`px-4 py-2 border ${
+          className={`px-4 py-2 max-sm:px-2 max-sm:py-1 border ${
             i === currentPage
               ? 'bg-black/60 text-white'
               : 'bg-white text-black'
@@ -54,7 +54,7 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
         <button
           key={maxPage}
           onClick={() => onPageChange(maxPage)}
-          className="px-4 py-2 border bg-white text-black"
+          className="px-4 py-2 max-sm:px-2 max-sm:py-1 border bg-white text-black"
         >
           {maxPage}
         </button>
@@ -65,11 +65,11 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
   };
 
   return (
-    <div className="flex justify-center space-x-2">
+    <div className="flex justify-center space-x-2 max-sm:space-x-1 max-sm:text-xs">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`px-4 py-2 border bg-white text-black ${currentPage === 1? 'text-gray-400':''}`}
+        className={`px-4 py-2 max-sm:px-2 max-sm:py-1 border bg-white text-black ${currentPage === 1? 'text-gray-400':''}`}
       >
         <span className='block sm:hidden'>&#9668;</span>
         <span className='hidden sm:block'>Предыдущая</span>
@@ -78,7 +78,7 @@ const Pagination = ({ maxPage }: { maxPage: number }) => {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === maxPage}
-        className={`px-4 py-2 border bg-white text-black ${currentPage === maxPage? 'text-gray-400':''}`}
+        className={`px-4 py-2 max-sm:px-2 max-sm:py-1 border bg-white text-black ${currentPage === maxPage? 'text-gray-400':''}`}
       >
         <span className='hidden sm:block'>Следующая</span>
         <span className='block sm:hidden'>&#9658;</span>

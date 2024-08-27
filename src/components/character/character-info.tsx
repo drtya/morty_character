@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import SliderEpisode from './sliderEpisode';
 import { IResponse } from '@/api/fetchData';
+import Loader from '../loader';
 
 const CharacterInfo = () => {
   const [localeChar, setLocalChar] = useState<null | IResponse<ICharacter>>(
@@ -39,7 +40,7 @@ const CharacterInfo = () => {
         Back
       </Link>
       <div className="border rounded-2xl overflow-hidden p-4 bg-white shadow-lg">
-        {character?.data ? (
+        {character?.data &&!character.error ? (
           <>
             <Link
               href={character?.data?.url}
@@ -142,7 +143,7 @@ const CharacterInfo = () => {
             </div>
           </>
         ) : (
-          <div>Персонаж не найден</div>
+          <Loader/>
         )}
       </div>
     </div>

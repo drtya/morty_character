@@ -10,6 +10,7 @@ import StatusFilter from '../status-filter';
 import { characterGenders, characterStasuses } from '@/api/cahracter';
 import { ITransformCharactersPage } from '@/types/character';
 import { IResponse } from '@/api/fetchData';
+import Loader from '../loader';
 
 const CharacterList = () => {
   const params = useSearchParams();
@@ -59,7 +60,7 @@ const CharacterList = () => {
       ) : character?.error ? (
         <div>Не найдено персонажей по данному запросу</div>
       ) : (
-        <div>loading...</div>
+        <Loader/>
       )}
     </div>
   );
