@@ -16,6 +16,7 @@ const SearchInput = ({className}:{className?:string}) => {
       params.set("search", term);
       dispatch(setSearch(term))
     } else {
+      dispatch(setSearch(''))
       params.delete("search");
     }
     replace(`${pathname}?${params.toString()}`);
